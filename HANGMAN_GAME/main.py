@@ -1,9 +1,8 @@
 import random
-import hangman_words
-import hangman_art
+import hangman_words as hw
+import hangman_art as ha
 
-word_list = ['ardvark', 'baboon', 'camel']
-chosen_word = random.choice(word_list)
+chosen_word = random.choice(hw.word_list)
 lives = 6
 
 display = ['_'] * len(chosen_word)
@@ -11,7 +10,7 @@ display = ['_'] * len(chosen_word)
 
 
 print("Welcome to Hangman!")
-print(hangman_art[lives])
+print(ha.hangman_art[lives])
 
 while True:
     guess = input('Choose a random letter: ').lower()
@@ -30,7 +29,7 @@ while True:
         lives -= 1
 
     print(' '.join(display))
-    print(hangman_art[lives])
+    print(ha.hangman_art[lives])
 
     # Check if any blanks remain
     if '_' not in display:
